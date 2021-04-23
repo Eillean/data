@@ -1,9 +1,4 @@
-# data
-SpringBoot+Mybatis简单的后端接口
-
-
 # 步骤
-
 1.新建一个Spring Initializr项目
 
 2.选择项目所需要的依赖
@@ -102,7 +97,7 @@ spring.datasource.password=123456
 mybatis.mapper-locations=classpath:mapper/*Mapper.xml
 ```
 
-# Controller:
+4. Controller:
 ```
 package com.test.controller;
 
@@ -128,5 +123,72 @@ public class StudentsController {
     public Student getAllStudent() {
         return studentService.getAllStudentInfo();
     }
+}
+```
+
+5.service
+```
+package com.test.service;
+
+import com.test.entity.Student;
+import com.test.mapper.StudentMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+
+    @Autowired
+    StudentMapper studentMapper;
+
+    public Student getAllStudentInfo() {
+        return studentMapper.studentQry();
+    }
+
+}
+```
+6.mapper
+```
+package com.test.mapper;
+
+import com.test.entity.Student;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StudentMapper {
+    Student studentQry();
+}
+```
+
+7.mapper.xml
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.StudentMapper">
+
+    <resultMap id="BaseResultMap" type="com.test.entity.Student">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="age" jdbcType="INTEGER" property="age" />
+    </resultMap>
+
+    <select id="studentQry" resultType="com.test.entity.Student">
+        select * from student
+    </select>
+
+</mapper>
+```
+
+8.entity
+```
+package com.test.entity;
+
+import lombok.Data;
+
+@Data
+public class Student {
+    public Integer id;
+    public String name;
+    public Integer age;
 }
 ```
