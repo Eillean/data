@@ -2,12 +2,10 @@
 1.新建一个Spring Initializr项目
 
 2.选择项目所需要的依赖
- Web 
-   web
- SQL
-   MySQL
-   JDBC
-   Mybatis
+
+ Web (web)
+ 
+ SQL (MySQL JDBC Mybatis)
    
 pom中会加入依赖：   
 ```
@@ -192,3 +190,17 @@ public class Student {
     public Integer age;
 }
 ```
+9.SQL
+```
+CREATE TABLE `student` (
+  `id` int(32) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `age` int(3) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+# 结构图
+!（image）[https://www.baidu.com/img/flexible/logo/pc/result.png]
+
+
