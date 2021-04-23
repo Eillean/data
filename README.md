@@ -201,6 +201,6 @@ CREATE TABLE `student` (
 ```
 
 # 结构图
-!（image）[https://www.baidu.com/img/flexible/logo/pc/result.png]
+！[image](https://www.baidu.com/img/flexible/logo/pc/result.png)
 
 
