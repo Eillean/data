@@ -3,7 +3,9 @@ SpringBoot+Mybatis简单的后端接口
 
 
 # 步骤
+
 1.新建一个Spring Initializr项目
+
 2.选择项目所需要的依赖
  Web 
    web
