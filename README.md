@@ -201,6 +201,6 @@ CREATE TABLE `student` (
 ```
 
 # 结构图
-！[image](https://github.com/Eillean/img-folder/tree/main/data/1.png)
+！[img](https://github.com/Eillean/img-folder/tree/main/data/1.png)
 
 
