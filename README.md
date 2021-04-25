@@ -190,7 +190,25 @@ public class Student {
     public Integer age;
 }
 ```
-9.SQL
+9.添加mapper扫描
+```
+package com.test;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@MapperScan("com.test.mapper")
+@SpringBootApplication
+public class DataApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DataApplication.class, args);
+    }
+
+}
+```
+10.SQL
 ```
 CREATE TABLE `student` (
   `id` int(32) NOT NULL AUTO_INCREMENT,
