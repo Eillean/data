@@ -60,7 +60,7 @@ pom中会加入依赖：
         </dependency>
     </dependencies>
 
-    <build>
+     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -68,11 +68,8 @@ pom中会加入依赖：
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.1</version>
-                <configuration>
-                    <skipTests>true</skipTests>
-                </configuration>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.3</version>
             </plugin>
         </plugins>
     </build>
